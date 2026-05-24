@@ -8,7 +8,8 @@
     "extract": "node extract_cookies.js",
     "list-threads": "node print_threads.js",
     "send-test": "node send_test.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "patch-package"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,8 @@
     "@vangbanlanhat/fca-unofficial": "^1.4.5",
     "camoufox": "^0.1.19",
     "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.1"
   }
 }
