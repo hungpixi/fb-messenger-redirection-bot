@@ -14,6 +14,25 @@ A premium, secure Node.js Facebook Messenger profile bot that automatically inte
 *   **⏳ Human typing simulation:** Triggers the native Facebook `typing...` state and applies a realistic random delay (2-4 seconds) before sending the reply script.
 *   **📊 Local CRM database logs:** Automatically appends redirected conversations in real-time to Excel-compatible `chat_history.csv` and structured `chat_history.json` complete with customer full names resolved from the Graph API.
 *   **🛠️ Reusable AI Agent Skill:** Includes a detailed [SKILL.md](file:///D:/code/sao-sang-bridge/SKILL.md) file so any AI agent can easily redeploy, customize, and configure this project for other schools or clients.
+*   **🔌 Persistent Dependency Patching:** Fully integrates `patch-package` to preserve critical engine-level fixes made directly inside the `@vangbanlanhat/fca-unofficial` package, making the codebase 100% portable.
+
+---
+
+## 🔧 Persistent Dependency Patches (`patch-package`)
+
+### The Problem
+During development and troubleshooting, crucial engine-level changes were made directly inside the local `node_modules/@vangbanlanhat/fca-unofficial/` directory. Without a persistent tracking mechanism, executing a fresh `npm install` on a clean machine or a new server would overwrite these modifications with the default (and broken) package versions, breaking the bot completely.
+
+### The Patch Mechanism
+To solve this, we integrated `patch-package` into our workflow. 
+
+1.  **Bugs Patched:**
+    *   **MQTT Packet Visibility:** In `listenMqtt.js`, injected console logging of raw MQTT frames to allow immediate visibility into incoming events and system heartbeats.
+    *   **Diagnostic Export:** In `src/index.js`, injected an automated HTML dump (`facebook_home.html`) when the MQTT login handshake fails. This lets the operator instantly troubleshoot credential issues without guessing.
+2.  **Automatic Application:**
+    *   All modifications are tracked as a diff patch in `patches/@vangbanlanhat+fca-unofficial+1.4.5.patch`.
+    *   The `package.json` contains a `"postinstall": "patch-package"` lifecycle hook.
+    *   **How it works:** When you or any automated deployment system runs `npm install`, npm automatically executes the `postinstall` script immediately after downloading the packages. `patch-package` reads the `.patch` file and surgically injects the MQTT fixes back into your local node modules, guaranteeing the bot works flawlessly out-of-the-box!
 
 ---
 
@@ -26,6 +45,7 @@ git clone https://github.com/hungpixi/fb-messenger-redirection-bot.git
 cd fb-messenger-redirection-bot
 npm install
 ```
+*(Note: During `npm install`, you will see `patch-package` automatically applying the `@vangbanlanhat/fca-unofficial@1.4.5` patch in the console!)*
 
 ### 2. Configuration
 
