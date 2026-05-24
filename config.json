@@ -1,0 +1,8 @@
+{
+  "HOTLINE_ZALO": "0834422439",
+  "LINK_ZALO": "https://zalo.me/0834422439",
+  "REPLY_TEMPLATE": "Dạ Mầm Non Sao Sáng xin chào Ba/Mẹ ạ! 🥰\n\nHiện tại Facebook cá nhân này không có người trực 24/7, sợ phản hồi cho Ba/Mẹ bị chậm trễ. Ba/Mẹ vui lòng bấm vào liên kết dưới đây để nhắn tin trực tiếp qua Zalo của các cô tư vấn nhé ạ:\n\n👉 LINK ZALO: {LINK_ZALO}\n(Hoặc kết bạn qua SĐT Zalo: {HOTLINE_ZALO})\n\nCác cô sẽ gửi bảng học phí chi tiết theo độ tuổi và hình ảnh 3 cơ sở vật chất qua Zalo cho Ba/Mẹ xem ngay ạ! ❤️",
+  "IGNORE_SELF": true,
+  "MIN_DELAY_MS": 2000,
+  "MAX_DELAY_MS": 4000
+}

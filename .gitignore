@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Sensitive credentials & session files (CRITICAL!)
+appstate.json
+facebook_home.html
+image.png
+image copy.png
+*.png
+*.html
+
+# Local logs & CRM data (personal data)
+chat_history.csv
+chat_history.json
+
+# Internal environment/CLI configurations
+.antigravitycli/
+temp_gui/
+.idea/
+.vscode/
+*.log
